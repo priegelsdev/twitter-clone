@@ -4,14 +4,15 @@ const tweetInputText = document.querySelector('.tweet-input-text');
 const tweetBtn = document.querySelector('.tweet-btn');
 const feed = document.querySelector('.feed');
 
-tweetBtn.addEventListener('click', getFeedHtml);
+tweetBtn.addEventListener('click', render);
 
 
 function getFeedHtml() {
   let feedHtml = ``
 
   tweetData.forEach(function(tweet) {
-    feed.innerHTML += `
+    
+    feedHtml += `
       <div class="tweet">
         <div class="tweet-inner">
           <img src="${tweet.profilePic}" class="profile-pic">
@@ -34,8 +35,12 @@ function getFeedHtml() {
       </div>
       `
   })
+  return feedHtml;
 }
 
+function render() {
+  feed.innerHTML = getFeedHtml();
+}
 
 
 
