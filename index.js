@@ -18,7 +18,7 @@ function getFeedHTML() {
             <p class="tweet-text">${tweet.tweetText}TWEET TEXT</p>
             <div class="tweet-details">
               <span class="tweet-detail">
-                ${tweet.replies}
+                ${tweet.replies.length}
               </span> 
               <span class="tweet-detail">
                 ${tweet.likes}
