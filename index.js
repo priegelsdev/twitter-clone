@@ -4,11 +4,13 @@ const tweetInputText = document.querySelector('.tweet-input-text');
 const tweetBtn = document.querySelector('.tweet-btn');
 const feed = document.querySelector('.feed');
 
-tweetBtn.addEventListener('click', getFeedHTML);
+tweetBtn.addEventListener('click', getFeedHtml);
 
 
-function getFeedHTML() {
-  for (let tweet of tweetData) {
+function getFeedHtml() {
+  let feedHtml = ``
+
+  tweetData.forEach(function(tweet) {
     feed.innerHTML += `
       <div class="tweet">
         <div class="tweet-inner">
@@ -29,8 +31,9 @@ function getFeedHTML() {
             </div>
           </div>
         </div>
-      </div>`
-  }
+      </div>
+      `
+  })
 }
 
 
