@@ -15,11 +15,12 @@ document.addEventListener('click', function(e) {
   if(e.target.dataset.like) {
     handleLikeClick(e.target.dataset.like)
   }
-
 })
 
 function handleLikeClick(tweetId){
-  console.log(tweetId);
+  const targetTweetObject = tweetData.filter(tweet => tweetId === tweet.uuid)[0]
+  targetTweetObject.likes++;
+  render();
 }
 
 function getFeedHtml() {
