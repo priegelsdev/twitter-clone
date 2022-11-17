@@ -1,0 +1,39 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 600px;
+  margin: 0 auto;
+}
+
+header {
+  color: green;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.tweet-input-text {
+  
+  resize: none;
+}
+
+.tweet-btn {
+  padding: 10px 20px;
+  background-color: green; 
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+}
+
+.tweet-btn:hover {
+  background-color: rgb(0, 88, 0); 
+}
