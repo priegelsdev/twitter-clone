@@ -4,7 +4,9 @@ const tweetInputText = document.querySelector('.tweet-input-text');
 const tweetBtn = document.querySelector('.tweet-btn');
 const feed = document.querySelector('.feed');
 
-tweetBtn.addEventListener('click', render);
+tweetBtn.addEventListener('click', function() {
+  console.log(getFeedHtml());
+});
 
 
 function getFeedHtml() {
@@ -42,7 +44,7 @@ function render() {
   feed.innerHTML = getFeedHtml();
 }
 
-
+render();
 
 
 
