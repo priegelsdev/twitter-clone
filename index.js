@@ -14,8 +14,12 @@ tweetBtn.addEventListener('click', function() {
 document.addEventListener('click', function(e) {
   if(e.target.dataset.like) {
     handleLikeClick(e.target.dataset.like)
+  } else if (e.target.dataset.retweet) {
+    handleRetweetClick(e.target.dataset.retweet)
   }
 })
+
+// create function for handling click on like icon
 
 function handleLikeClick(tweetId){
   const targetTweetObject = tweetData.filter(tweet => tweetId === tweet.uuid)[0]
@@ -30,6 +34,24 @@ function handleLikeClick(tweetId){
 
   render();
 }
+
+// create function for handling click on retweet icon
+
+function handleRetweetClick(tweetId){
+  const targetTweetObject = tweetData.filter(tweet => tweet.uuid === tweetId)[0];
+
+  if (targetTweetObject.isRetweeted) {
+    targetTweetObject.retweets--;
+  } else {
+    targetTweetObject.retweets++;
+  }
+
+  targetTweetObject.isRetweeted = !targetTweetObject.isRetweeted;
+
+  render();
+}
+
+// create function for getting post feed
 
 function getFeedHtml() {
   let feedHtml = ``
@@ -65,9 +87,13 @@ function getFeedHtml() {
   return feedHtml;
 }
 
+// create render function
+
 function render() {
   feed.innerHTML = getFeedHtml();
 }
+
+// call render function to show feed on page load
 
 render();
 

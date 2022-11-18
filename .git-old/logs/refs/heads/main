@@ -1,0 +1,12 @@
+0000000000000000000000000000000000000000 e0838a4bb00d5af8808d73013450e2f19ef6e932 priegelsdev <priegelsdev@gmail.com> 1668679114 +0100	clone: from github.com:priegelsdev/twitter-clone.git
+e0838a4bb00d5af8808d73013450e2f19ef6e932 9730f42cc8b38b33eae8599097d815aae5ed09ab priegelsdev <priegelsdev@gmail.com> 1668690137 +0100	commit: initialize files and add basic setup
+9730f42cc8b38b33eae8599097d815aae5ed09ab 7256126e4ab5236d34ad98278bdda934fcc2b713 priegelsdev <priegelsdev@gmail.com> 1668690946 +0100	commit: create get feed function
+7256126e4ab5236d34ad98278bdda934fcc2b713 3dd02c2b88dc77942f3829a55f9a59c97483453e priegelsdev <priegelsdev@gmail.com> 1668691312 +0100	commit: add more realistic tweet data to data.js
+3dd02c2b88dc77942f3829a55f9a59c97483453e fca27dfbc1cfc082e6f80f77c0d63466ebcf7c78 priegelsdev <priegelsdev@gmail.com> 1668691425 +0100	commit: fix bug where tweet replies would not display correctly
+fca27dfbc1cfc082e6f80f77c0d63466ebcf7c78 93fdb1b05016c8ce2f11ee327a52c0607c28a723 priegelsdev <priegelsdev@gmail.com> 1668691924 +0100	commit: refactor getFeedHtml to use forEach
+93fdb1b05016c8ce2f11ee327a52c0607c28a723 05e916fca1ac25b3e55932af4f863e42f10c8a4d priegelsdev <priegelsdev@gmail.com> 1668693961 +0100	commit: refactor and add render function
+05e916fca1ac25b3e55932af4f863e42f10c8a4d 8bc07aa889b68c4114bf292464087cf276aa068f priegelsdev <priegelsdev@gmail.com> 1668694137 +0100	commit: clean up logic and let feed show once page renders
+8bc07aa889b68c4114bf292464087cf276aa068f dc270c3ac786a5697fe96ab70b4c3c6c408a4f99 priegelsdev <priegelsdev@gmail.com> 1668694905 +0100	commit: add cdn icons
+dc270c3ac786a5697fe96ab70b4c3c6c408a4f99 6f94f8af01f40ee7b311e6951e7d4fb76373db7b priegelsdev <priegelsdev@gmail.com> 1668698539 +0100	commit: set up eventlistener with handleClick function
+6f94f8af01f40ee7b311e6951e7d4fb76373db7b 17be83be179eb1423dad5705d35c03cf789cc7e7 priegelsdev <priegelsdev@gmail.com> 1668701325 +0100	commit: set up function to increment likes on click
+17be83be179eb1423dad5705d35c03cf789cc7e7 1623cde7f1426bcf2177ca11fcc4f13064bb73a1 priegelsdev <priegelsdev@gmail.com> 1668702246 +0100	commit: add decrement logic to handleLikeClick function
