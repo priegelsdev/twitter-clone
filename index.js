@@ -1,8 +1,6 @@
 import {tweetData} from "/data.js";
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
-const feed = document.querySelector('.feed');
-const tweetInput = document.querySelector('.tweet-input-text');
 
 // event listeners
 
@@ -61,6 +59,7 @@ function handleReplyClick(replyId){
 // create function for posting tweet
 
 function handleTweetBtnClick(){
+  const tweetInput = document.querySelector('.tweet-input-text');
   
   if (tweetInput.value) {
     let newTweetObj = {
