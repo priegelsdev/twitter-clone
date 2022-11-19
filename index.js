@@ -1,6 +1,8 @@
 import {tweetData} from "/data.js";
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
 const feed = document.querySelector('.feed');
+const tweetInput = document.querySelector('.tweet-input-text');
 
 // event listeners
 
@@ -56,10 +58,23 @@ function handleReplyClick(replyId){
   document.querySelector(`#replies-${replyId}`).classList.toggle('hidden');
 }
 
-// create function for handling tweet button click
+// create function for posting tweet
 
 function handleTweetBtnClick(){
-  console.log('test')
+  let newTweetObj = {
+    handle: `priegelsdev`,
+    profilePic: `img/profilepicture.jpeg`,
+    likes: 0,
+    retweets: 0,
+    tweetText: tweetInput.value,
+    replies: [],
+    isLiked: false,
+    isRetweeted: false,
+    uuid: uuidv4(),
+  }
+
+  tweetData.unshift(newTweetObj);
+  render();
 }
 
 // create function for getting post feed
