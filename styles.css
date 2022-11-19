@@ -49,3 +49,11 @@ main {
 .retweeted {
   color: limegreen;
 }
+
+.tweet-reply {
+  margin-left: 30px;
+}
+
+.hidden {
+  display: none;
+}

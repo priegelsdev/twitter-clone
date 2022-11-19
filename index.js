@@ -18,6 +18,8 @@ document.addEventListener('click', function(e) {
     handleLikeClick(e.target.dataset.like)
   } else if (e.target.dataset.retweet) {
     handleRetweetClick(e.target.dataset.retweet)
+  } else if (e.target.dataset.reply) {
+    handleReplyClick(e.target.dataset.reply)
   }
 })
 
@@ -53,24 +55,51 @@ function handleRetweetClick(tweetId){
   render();
 }
 
+// create fucntion for handling click on reply icon to show replies
+
+function handleReplyClick(replyId){
+  document.querySelector(`#replies-${replyId}`).classList.toggle('hidden');
+}
+
 // create function for getting post feed
 
 function getFeedHtml() {
-  let feedHtml = ``
+  let feedHtml = ``;
 
   tweetData.forEach(function(tweet) {
 
     // set up logic to make clicks on icons change color
 
-    let heartClass = ''
-    let retweetClass = ''
+    let heartClass = '';
+    let retweetClass = '';
 
     if (tweet.isLiked) {
-      heartClass = 'liked'
+      heartClass = 'liked';
     }
   
     if (tweet.isRetweeted) {
-      retweetClass = 'retweeted'
+      retweetClass = 'retweeted';
+    }
+
+    // set up logic to make clicks on reply icon show replies
+
+    let repliesHtml = '';
+
+    if (tweet.replies.length > 0) {
+
+      tweet.replies.forEach(function(reply){
+      repliesHtml += `
+        <div class="tweet-reply">
+            <div class="tweet-inner">
+                <img src="${reply.profilePic}" class="profile-pic">
+                    <div>
+                        <p class="handle">${reply.handle}</p>
+                        <p class="tweet-text">${reply.tweetText}</p>
+                    </div>
+                </div>
+        </div>
+        `
+      });
     }
 
     // render out each tweet from data.js
@@ -98,9 +127,12 @@ function getFeedHtml() {
             </div>
           </div>
         </div>
+        <div class="hidden" id="replies-${tweet.uuid}">
+          ${repliesHtml}
+        </div>   
       </div>
       `
-  })
+  });
   return feedHtml;
 }
 
