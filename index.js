@@ -61,20 +61,25 @@ function handleReplyClick(replyId){
 // create function for posting tweet
 
 function handleTweetBtnClick(){
-  let newTweetObj = {
-    handle: `priegelsdev`,
-    profilePic: `img/profilepicture.jpeg`,
-    likes: 0,
-    retweets: 0,
-    tweetText: tweetInput.value,
-    replies: [],
-    isLiked: false,
-    isRetweeted: false,
-    uuid: uuidv4(),
+  
+  if (tweetInput.value) {
+    let newTweetObj = {
+      handle: `priegelsdev`,
+      profilePic: `img/profilepicture.jpeg`,
+      likes: 0,
+      retweets: 0,
+      tweetText: tweetInput.value,
+      replies: [],
+      isLiked: false,
+      isRetweeted: false,
+      uuid: uuidv4(),
+    }
+    tweetData.unshift(newTweetObj);
+    render();
+    tweetInput.value = '';
   }
 
-  tweetData.unshift(newTweetObj);
-  render();
+
 }
 
 // create function for getting post feed
