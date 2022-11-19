@@ -57,6 +57,17 @@ function getFeedHtml() {
   let feedHtml = ``
 
   tweetData.forEach(function(tweet) {
+
+    let heartClass = ''
+    let retweetClass = ''
+
+    if (tweet.isLiked) {
+      heartClass = 'liked'
+    }
+  
+    if (tweet.isRetweeted) {
+      retweetClass = 'retweeted'
+    }
     
     feedHtml += `
       <div class="tweet">
@@ -71,11 +82,11 @@ function getFeedHtml() {
                 ${tweet.replies.length}
               </span> 
               <span class="tweet-detail">
-                <i class="fa-solid fa-heart" data-like="${tweet.uuid}"></i>
+                <i class="fa-solid fa-heart ${heartClass}" data-like="${tweet.uuid}"></i>
                 ${tweet.likes}
               </span> 
               <span class="tweet-detail">
-                <i class="fa-solid fa-retweet" data-retweet="${tweet.uuid}"></i>
+                <i class="fa-solid fa-retweet ${retweetClass}" data-retweet="${tweet.uuid}"></i>
                 ${tweet.retweets}
               </span>      
             </div>
