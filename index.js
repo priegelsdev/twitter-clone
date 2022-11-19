@@ -11,6 +11,8 @@ tweetBtn.addEventListener('click', function() {
   console.log(getFeedHtml());
 });
 
+  // one even listener to listen for clicks on icons such as like, retweet and comment
+
 document.addEventListener('click', function(e) {
   if(e.target.dataset.like) {
     handleLikeClick(e.target.dataset.like)
@@ -58,6 +60,8 @@ function getFeedHtml() {
 
   tweetData.forEach(function(tweet) {
 
+    // set up logic to make clicks on icons change color
+
     let heartClass = ''
     let retweetClass = ''
 
@@ -68,6 +72,8 @@ function getFeedHtml() {
     if (tweet.isRetweeted) {
       retweetClass = 'retweeted'
     }
+
+    // render out each tweet from data.js
     
     feedHtml += `
       <div class="tweet">
@@ -75,7 +81,7 @@ function getFeedHtml() {
           <img src="${tweet.profilePic}" class="profile-pic">
           <div>
             <p class="handle">${tweet.handle}</p>
-            <p class="tweet-text">${tweet.tweetText}TWEET TEXT</p>
+            <p class="tweet-text">${tweet.tweetText}</p>
             <div class="tweet-details">
               <span class="tweet-detail">
                 <i class="fa-regular fa-comment-dots" data-reply="${tweet.uuid}"></i>
