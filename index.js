@@ -1,25 +1,20 @@
 import {tweetData} from "/data.js";
 
-const tweetInputText = document.querySelector('.tweet-input-text');
-const tweetBtn = document.querySelector('.tweet-btn');
 const feed = document.querySelector('.feed');
-const like = document.querySelector('.fa-heart');
 
 // event listeners
-
-tweetBtn.addEventListener('click', function() {
-  console.log(getFeedHtml());
-});
 
   // one even listener to listen for clicks on icons such as like, retweet and comment
 
 document.addEventListener('click', function(e) {
   if(e.target.dataset.like) {
-    handleLikeClick(e.target.dataset.like)
+    handleLikeClick(e.target.dataset.like);
   } else if (e.target.dataset.retweet) {
-    handleRetweetClick(e.target.dataset.retweet)
+    handleRetweetClick(e.target.dataset.retweet);
   } else if (e.target.dataset.reply) {
-    handleReplyClick(e.target.dataset.reply)
+    handleReplyClick(e.target.dataset.reply);
+  } else if (e.target.className === "tweet-btn") {
+    handleTweetBtnClick();
   }
 })
 
@@ -55,10 +50,16 @@ function handleRetweetClick(tweetId){
   render();
 }
 
-// create fucntion for handling click on reply icon to show replies
+// create function for handling click on reply icon to show replies
 
 function handleReplyClick(replyId){
   document.querySelector(`#replies-${replyId}`).classList.toggle('hidden');
+}
+
+// create function for handling tweet button click
+
+function handleTweetBtnClick(){
+  console.log('test')
 }
 
 // create function for getting post feed
